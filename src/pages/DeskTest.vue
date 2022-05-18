@@ -1,6 +1,6 @@
 <template>
     <div id="deskBasic" ref="bg" :style="{backgroundImage : 'url(' + bgImg + ')',backgroundRepeat: 'no-repeat',
-backgroundSize:['100%','100%']}">
+backgroundSize:['100%','100%'],height:bodyHeight,width: bodyWidth}">
         <el-container>
             <el-header :height="headerHeight">
                 <span style="float:left;">活动</span>
@@ -42,7 +42,10 @@ backgroundSize:['100%','100%']}">
 
                 </div>
 
-                <span class="mouse"  @click="dialogVisible = true" circle><i class="el-icon-edit"></i></span>
+                <el-tooltip class="item" effect="dark" content="点击更改壁纸" placement="bottom">
+                  <span class="mouse"  @click="dialogVisible = true" circle><i class="el-icon-edit"></i></span>
+                </el-tooltip>
+                
             </el-header>
             <el-container>
                 <el-aside :width="asideWidth">
@@ -96,6 +99,8 @@ import SystemState from '../components/SystemState.vue'
             headerHeight:window.innerHeight*0.04+'px',
             asideWidth:window.innerWidth*0.05+'px',
             footerHeight:window.innerHeight*0.06+'px',
+            bodyHeight:window.innerHeight+'px',
+            bodyWidth:window.innerWidth+'px',
             dialogVisible: false,
             bgImg:require('../assets/desktop.png'),
             fileShow:false,
@@ -120,8 +125,8 @@ import SystemState from '../components/SystemState.vue'
           
           // console.log('屏幕可用高宽 '+screen.availHeight+' '+ screen.availWidth);
           // console.log('屏幕高宽 '+screen.Height+' '+ screen.Width);
-          // console.log('浏览器高宽 '+window.outerHeight+" "+ window.outerWidth)
-          // console.log('浏览器可用高宽 '+window.innerHeight+" "+ window.innerWidth)
+          console.log('浏览器高宽 '+window.outerHeight+" "+ window.outerWidth)
+          console.log('浏览器可用高宽 '+window.innerHeight+" "+ window.innerWidth)
           // console.log('body宽高 '+body.offsetHeight+" "+body.offsetWidth);
           // console.log('body宽高 '+body.clientHeight+" "+body.clientWidth);
         },
@@ -233,8 +238,8 @@ import SystemState from '../components/SystemState.vue'
 
 <style scoped>
   #deskBasic{
-    height: 722px;
-    width:1536px;
+    /* height: 722px;
+    width:1536px; */
     /* background-image: url('../assets/desktop.png'); */
   }
   .el-container{

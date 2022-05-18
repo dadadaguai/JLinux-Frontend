@@ -1,17 +1,17 @@
 <template>
     <el-container>
-    <el-header height="40px">
-        <span style="margin-bottom:1rem"> 
-            {{"cpu的"+cpu[0]}}
-        </span>
-        <span >
-            {{cpu[1]+" , "+cpu[4]+" , "+cpu[5]}}
-        </span>
-    </el-header>
-    <el-main>
-        <div ref="chart" id="chart" style="width: 100%; height:360px; overflow:hidden;"  ></div>
-    </el-main>
-</el-container>
+        <el-header height="40px">
+            <span style="margin-bottom:1rem"> 
+                {{"cpu的"+cpu[0]}}
+            </span>
+            <span >
+                {{cpu[1]+" , "+cpu[4]+" , "+cpu[5]}}
+            </span>
+        </el-header>
+        <el-main>
+            <div ref="chart" id="chart" style="width: 100%; height:360px; overflow:hidden;"  ></div>
+        </el-main>
+    </el-container>
 </template>
 
 <script>
